@@ -3,16 +3,23 @@ source("tools.r")
 # NOTE: redefine any of these at the beginning of a plot_... script to modify them
 # for one plot specifically
 
+cfg.dir = dirname(dirname(getwd()))
+cfg.name = "config.ini"
+cfg.filter = "*.ini"
+
+# Get configuration ini
+config = get.config(cfg.dir, cfg.name,)
+
 # PostgreSQL database ----
 # modify these parameters to point to your postgis database
 # these should match config.ini
 db.driver = dbDriver("PostgreSQL")
-db.name = "cveureka"
-db.host = "localhost"
-db.port = 5432
-db.user = "postgres"
-db.password = "password"
-db.schema = "mtd" # inserted into the query directly
+db.name = config$Database$dbname
+db.host = config$Database$host
+db.port = as.integer(config$Database$port)
+db.user = config$Database$user
+db.password = config$Database$password
+db.schema = config$Database$default_schema # inserted into the query directly
 
 # Query Props ----
 # use to filter out certain results when the analysis narrows in scope
@@ -94,7 +101,7 @@ sq.map.salin = sql.query(
 )
 
 # Make functions from tools ----
-save.plot = makefunc.save.plot("", "../../plots")
+save.plot = makefunc.save.plot("", config$Analysis$plot_dir)
 sql.fetch = makefunc.sql.fetch(
   db.driver, db.name, db.host, db.port, db.user, db.password
 )

@@ -3,8 +3,40 @@ require(ggplot2)
 require(ggpubr)
 require(ggcorrplot)
 require(latex2exp)
+require(ini)
+require(reshape2)
+
 
 library(stringr)
+
+# Configuration ----
+
+# Returns the configuration structure
+# Tries to get the file directly first and then asks if that fails
+get.config = function(dir.path, file.name, file.filter) {
+  config = tryCatch(
+    
+    {
+      try.path = file.path(dir.path, file.name)
+      read.ini(try.path)
+    },
+    
+    error = function(e) {
+      
+      try.dir = file.path(dir.path, file.filter)
+      alt.path = choose.files(
+        default=try.dir,
+        caption="Select config.ini",
+        multi=FALSE
+      )
+      print(alt.path)
+      read.ini(alt.path)
+    }
+    
+  )
+  
+  return(config)
+}
 
 # Plotting ----
 

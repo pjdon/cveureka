@@ -75,9 +75,11 @@ A batch file `method.bat` is provided with default configuration for running in 
 
 The `src/cve_analysis` directory contains  [R scripts](https://www.r-project.org/) that connect to the PostgreSQL database, consume the results and produce the analysis figures:
 
-* `config.r` stores the database connection settings and other processing constants. Modify the variables in the `PostgreSQL database` section so that they reflect the settings in your `config.ini` 
+* `config.r` stores processing constants and reads configurations from `config.ini` in the project root
 * `tools.r` contains helper functions for reshape and analyzing the results
-* scripts that begin with `plot_`  generate the manuscript plots into the `plots` directory in the project root. This can be changed in the `config.r` script
+* scripts that begin with `plot_`  generate the manuscript plots into the `plots` directory in the project root
+
+None of the scripts need to modified to produce the default results. If `config.ini` cannot be found the process will ask for its location.
 
 It is recommended to use [RStudio](https://rstudio.com/) to run the scripts as it should retrieve and install the necessary packages automatically.
 
