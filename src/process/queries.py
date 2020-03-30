@@ -460,18 +460,20 @@ retracker_error = \
 """
 WITH
 _offset AS (
-SELECT offset_calib, tfmra_threshold, AVG(sensor_offset) sensor_offset
-FROM c20.offset_samples
-GROUP BY offset_calib, tfmra_threshold
+SELECT {I@offset_calib}, {I@tfmra_threshold},
+    AVG({I@sensor_offset}) sensor_offset
+FROM {T@offset}
+GROUP BY {I@offset_calib}, {I@tfmra_threshold}
 ),
 _elv AS (
-SELECT id_asr, fp_size, offset_calib, tfmra_threshold, sensor_offset, dens_adj,
-    tfmra_elvtn,
-    tfmra_elvtn+sensor_offset offset_elvtn,
-    snow_depth_mean snow_depth,
-    snow_elvtn_mean snow_elvtn,
-    snow_elvtn_mean-snow_depth_mean ice_elvtn,
-    snow_dens_interp snow_dens,
+SELECT {I@id_asr}, {I@fp_size}, {I@offset_calib}, {I@tfmra_threshold},
+    sensor_offset, {I@dens_adj},
+    {I@tfmra_elvtn},
+    {I@tfmra_elvtn}+sensor_offset offset_elvtn,
+    {I@snow_depth_mean} snow_depth,
+    {I@snow_elvtn_mean} snow_elvtn,
+    {I@snow_elvtn_mean}-snow_depth_mean ice_elvtn,
+    {I@snow_dens_interp} snow_dens,
     CASE
         WHEN dens_adj
         THEN 
@@ -483,24 +485,27 @@ SELECT id_asr, fp_size, offset_calib, tfmra_threshold, sensor_offset, dens_adj,
         ELSE
             tfmra_elvtn+sensor_offset
      END adjust_elvtn
-FROM c20.asr_tfmra
-JOIN _offset USING (tfmra_threshold)
-JOIN c20.asr_aggr USING (id_asr)
-JOIN c20.asr_snow_dens USING (id_asr),
-(VALUES (TRUE),(FALSE)) adj(dens_adj)
-WHERE snow_depth_count >=1 and snow_elvtn_count >= 1
+FROM {T@tfmra}
+JOIN _offset USING ({I@tfmra_threshold})
+JOIN {T@aggr} USING ({I@id_asr})
+JOIN {T@snow_dens} USING ({I@id_asr}),
+(VALUES (TRUE),(FALSE)) adj({I@dens_adj})
+WHERE {I@snow_depth_count} >=1 and {I@snow_elvtn_count} >= 1
 ),
 _error AS (
-SELECT id_asr, fp_size, offset_calib, tfmra_threshold, adjust_elvtn, dens_adj,
-    snow_elvtn-adjust_elvtn penetration,
-    (snow_elvtn-adjust_elvtn)/snow_depth rel_penetration,
-    adjust_elvtn-ice_elvtn error,
-    (adjust_elvtn-ice_elvtn)/snow_depth rel_error,
-    @(adjust_elvtn-ice_elvtn) abs_error,
-    @(adjust_elvtn-ice_elvtn)/snow_depth abs_rel_error,
-    (adjust_elvtn>snow_elvtn)::integer above_snow,
-    (adjust_elvtn<ice_elvtn)::integer below_ice,
-    (adjust_elvtn<=snow_elvtn AND adjust_elvtn>=ice_elvtn)::integer in_snowpack
+SELECT {I@id_asr},
+    {I@fp_size}, {I@offset_calib}, {I@tfmra_threshold},
+    {I@adjust_elvtn}, {I@dens_adj},
+    snow_elvtn-adjust_elvtn {I@penetration},
+    (snow_elvtn-adjust_elvtn)/snow_depth {I@rel_penetration},
+    adjust_elvtn-ice_elvtn {I@error},
+    (adjust_elvtn-ice_elvtn)/snow_depth {I@rel_error},
+    @(adjust_elvtn-ice_elvtn) {I@abs_error},
+    @(adjust_elvtn-ice_elvtn)/snow_depth {I@abs_rel_error},
+    (adjust_elvtn>snow_elvtn)::integer {I@above_snow},
+    (adjust_elvtn<ice_elvtn)::integer {I@below_ice},
+    (adjust_elvtn<=snow_elvtn AND adjust_elvtn>=ice_elvtn)::integer
+        {I@in_snowpack}
 FROM _elv
 )
 SELECT * FROM _error
