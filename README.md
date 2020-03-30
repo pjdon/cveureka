@@ -41,7 +41,7 @@ Clone this repository to a directory of your choice.
 
 1. Modify the `Database` section of `config.ini` to match the connection settings of your PostgreSQL database.
 
-   `default_schema` can be modified if there is existing data in the `public` schema that may cause name collisions.
+   `default_schema` should be changed to a schema specially prepared for this project. Using the `public` schema is not recommended since that is where PostGIS installs its functions, and moving the results tables after they are created can be tricky.
 
    `default_geom_col` should not be modified unless output tables will be inputs into a pipeline
 
@@ -51,7 +51,11 @@ Clone this repository to a directory of your choice.
 
    Due to their size, the input datasets are not available in this repository. Contact the author for details on how to obtain them.
 
-## Running the Method Procedure
+## Usage
+
+The data is process in two parts: the method and the analysis. The method takes the raw input and produces PostgreSQL tables with the ice surface estimate and error results, which is equivalent to the manuscript **Methods**  and **Results** section. The analysis reshapes parts of the results to create figures that are referenced in the **Analysis** and **Discussion** manuscript sections.
+
+### Method
 
 The `src/method.py` script is responsible for taking the input data and producing output tables in the PostgreSQL database which have ice surface estimates and their associated error.
 
@@ -66,6 +70,16 @@ python -m src.example "config.ini"
 ```
 
 A batch file `method.bat` is provided with default configuration for running in Windows.
+
+### Analysis
+
+The `src/cve_analysis` directory contains  [R scripts](https://www.r-project.org/) that connect to the PostgreSQL database, consume the results and produce the analysis figures:
+
+* `config.r` stores the database connection settings and other processing constants. Modify the variables in the `PostgreSQL database` section so that they reflect the settings in your `config.ini` 
+* `tools.r` contains helper functions for reshape and analyzing the results
+* scripts that begin with `plot_`  generate the manuscript plots into the `plots` directory in the project root. This can be changed in the `config.r` script
+
+It is recommended to use [RStudio](https://rstudio.com/) to run the scripts as it should retrieve and install the necessary packages automatically.
 
 ## Documentation
 
