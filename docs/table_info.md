@@ -59,10 +59,9 @@ Snow density calculated for each ASIRAS point based on nearest snow density obse
 Column | Description | Unit
 --- | --- | ---
 id_asr | Unique ID for each ASIRAS observation |
-snow_dens_nearest | Snow density of nearest observation to ASIRAS nadir |kg/m<sup>3</sup>
-dist_nearest | Distance to the nearest snow density observation |m
-snow_dens_interp | Distance-weighted snow density of nearest two observations to ASIRAS nadir |kg/m<sup>3</sup>
-dist_interp | Average distance to the nearest two snow density observations | m
+snow_dens_interp | Distance-weighted snow density of nearest two observations to ASIRAS |kg/m<sup>3</sup>
+dist_near | Distance to the nearest snow density observation |m 
+dist_far | Distance to the second nearest snow density observation | m
 
 ## asr_aggr
 
@@ -138,6 +137,7 @@ Column | Description | Unit
 --- | --- | ---
 id_asr | Unique ID for each ASIRAS observation |
 fp_size | Footprint size code. Radius (m) for circular footprints and -1 for pulse-doppler limited radar footprint |
+offset_calib | Offset calibration method ('main' for the conditions used in the manuscript, 'ssnow' for the conditions used in the MSc thesis)
 tfmra_threshold | Threshold as a fraction of the first peak value used to retrack the ice surface elevation |0 to 1
 dens_adj | Whether an adjustment is applied to the TFMRA elevation based on the snow depth and snow density. |True/False
 retrack_elvtn | TFMRA retracked ice surface elevation estimate |m
@@ -185,11 +185,6 @@ dens_mean | Thickness-weighted snowpack mean density |g/cm<sup>3</sup>
 dens_min | Minimum snowpack density |g/cm<sup>3</sup>
 dens_max | Maximum snowpack density |g/cm<sup>3</sup>
 dens_range | Snowpack density range |g/cm<sup>3</sup>
-year | Year |
-month | Month                                                 |
-day | Day of the month |
-doy | Day of the year                                       |
-time | TImestamp |
 latitude | WGS-84 latitude |deg
 longitude | WGS-84 longitude |deg
 geom | Geometry column |
