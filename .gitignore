@@ -1,0 +1,26 @@
+# PyCharm
+.idea
+
+# Python
+__pycache__
+
+
+
+# Large File Containers
+data
+
+# Temp Processes
+manage
+preprocess
+sql_snippet
+
+# Transient Output
+logs
+plots
+
+
+# R-lang
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
