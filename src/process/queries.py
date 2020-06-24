@@ -121,7 +121,7 @@ GROUP BY {I@id_pit}
 -- combine all salinity characteristics
 _saln_full AS (
 SELECT *
-FROM  _saln_ice_level
+FROM _saln_ice_level
     JOIN _saln_any_inpack USING ({I@id_pit})
     JOIN _saln_avg_salinity_psu USING ({I@id_pit})
     JOIN _saln_max_salinity_psu USING ({I@id_pit})
@@ -197,7 +197,7 @@ SELECT {I@id_pit},
 FROM {T@pit_dens}
 WHERE {I@id_pit} IN (
     SELECT {I@id_pit}
-    FROM pit_dens
+    FROM {T@pit_dens}
     GROUP BY 1
     HAVING bool_and(snow_density IS NOT NULL)
     ORDER BY {I@id_pit}
@@ -477,7 +477,7 @@ SELECT {I@id_asr}, {I@fp_size}, {I@offset_calib}, {I@tfmra_threshold},
     CASE
         WHEN dens_adj
         THEN 
-            adjust_dsi_by_snow_dens(
+            {T@adjust_dsi_by_snow_dens}(
                 (tfmra_elvtn+sensor_offset)::numeric,
                 snow_elvtn_mean::numeric,
                 snow_dens_interp::numeric
