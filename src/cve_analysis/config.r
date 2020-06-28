@@ -21,6 +21,9 @@ db.user = config$Database$user
 db.password = config$Database$password
 db.schema = config$Database$default_schema # inserted into the query directly
 
+# Plot Theme
+plthm = theme_bw()
+
 # Query Props ----
 # use to filter out certain results when the analysis narrows in scope
 # as the manuscript progresses

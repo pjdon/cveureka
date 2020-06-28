@@ -33,7 +33,7 @@ WITH
 _link AS (
 SELECT id_pit, id_asr
 FROM {db.schema}.pit_info i
-JOIN asr_src a ON ST_DWITHIN(a.geom, i.geom, {qp.pit_dist})
+JOIN {db.schema}.asr_src a ON ST_DWITHIN(a.geom, i.geom, {qp.pit_dist})
 ),
 _map_salin AS (SELECT * FROM {sq.map.salin} s(saline_snowpack, salin))
 SELECT (tfmra_threshold*100) threshold,
@@ -104,6 +104,7 @@ var_plot <- function(d, y, c, ylab, clab, extra1=NULL, extra2=NULL) {
     + geom_smooth(method=lm, formula=y~poly(x, 3, raw=TRUE), se=FALSE)
     + labs(x=NULL, y=NULL, color=clab)
     + guides(color=guide_legend(nrow=2,byrow=TRUE, title.position = "left"))
+    + plthm
     + theme(
       legend.position="top",
       legend.margin=margin(t = 0, unit='cm')

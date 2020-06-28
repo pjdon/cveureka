@@ -5,6 +5,7 @@ require(ggcorrplot)
 require(latex2exp)
 require(ini)
 require(reshape2)
+require(RPostgreSQL)
 
 
 library(stringr)

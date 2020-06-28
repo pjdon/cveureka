@@ -83,6 +83,8 @@ None of the scripts need to modified to produce the default results. If `config.
 
 It is recommended to use [RStudio](https://rstudio.com/) to run the scripts as it should retrieve and install the necessary packages automatically.
 
+Run the `plot_err_all.r` script to produce all plots.
+
 ## Documentation
 
 A description of the L1B binary format used to store the airborne ALS and ASIRAS data is available in `docs/cryovex_airborne_data_description.pdf`

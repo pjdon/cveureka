@@ -21,21 +21,23 @@ pdl_label = "Pulse-Doppler Limited Footprint"
 ggarrange(
   (
     ggplot(dcont, aes(x=fp, y=e_ra_mean))
-    + geom_point(size=2)
-    + geom_hline(aes(yintercept=pdl_mean))
-    + annotate("text", 22, pdl_mean, vjust=-1.5, label=pdl_label)
     + geom_smooth(method=lm, formula=y~poly(x, 4, raw=TRUE), se = FALSE)
+    + geom_hline(aes(yintercept=pdl_mean))
+    + geom_point(size=2)
+    + annotate("text", 22, pdl_mean, vjust=-1.5, label=pdl_label)
     + xlab(lb.fp_size)
     + ylab(lb.e_ra_mean)
+    + plthm
   ),
   (
     ggplot(dcont, aes(x=fp, y=e_ra_sd))
-    + geom_point(size=2)
-    + geom_hline(aes(yintercept=pdl_sd))
-    + annotate("text", 22, pdl_sd, vjust=2, label=pdl_label)
     + geom_smooth(method=lm, formula=y~poly(x, 4, raw=TRUE), se = FALSE)
+    + geom_hline(aes(yintercept=pdl_sd))
+    + geom_point(size=2)
+    + annotate("text", 22, pdl_sd, vjust=2, label=pdl_label)
     + xlab(lb.fp_size)
     + ylab(lb.e_ra_sd)
+    + plthm
   ),
   labels = 'AUTO'
 )
