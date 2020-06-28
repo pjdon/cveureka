@@ -76,4 +76,4 @@ ggarrange(
   labels="AUTO"
 )
   
-save.plot("dist_p_r_stat", 2, 1.2)
+save.plot("p_r_dist_stat", 2, 1.1)
