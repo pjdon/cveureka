@@ -9,18 +9,12 @@ AND offset_calib = '{qp.offset_calib}'
 AND dens_adj
 "))
 
-# aggregate by stats
-d.mean = aggregate(
-  d[c("p","p_r")],
-  d[c("thresh")],
-  mean
-)
+aggr.vals = c("p_r", "isp", "asn", "bic")
+aggr.id = c("thresh")
 
-d.sd = aggregate(
-  d[c("p","p_r")],
-  d[c("thresh")],
-  sd
-)
+# aggregate by stats
+d.mean = aggregate(d[aggr.vals],d[aggr.id],mean)
+d.sd = aggregate(d[aggr.vals],d[aggr.id],sd)
 
 d.stat = rbind(
   cbind(stat="Mean",d.mean),
@@ -47,7 +41,7 @@ ggarrange(
       aes(p_r)
     )
     + geom_line(aes(color=thresh_label), stat="density", size=1)
-    + geom_histogram(aes(y=..density..), fill="black", bins=100, position="identity", alpha=0.3)
+    + geom_histogram(aes(y=..density.., fill="All Thresholds"), bins=100, position="identity", alpha=0.3)
     + geom_vline(xintercept=0, linetype="dashed")
     + annotate(
       "text", -ann.xo, ann.y,
@@ -58,6 +52,7 @@ ggarrange(
       "text", 100+ann.xo, ann.y,
       label="Ice\nSurface"
     )
+    + scale_fill_manual(name="Histogram", values="black")
     + xlab(lb.p_r)
     + ylab(lb.density)
     + coord_cartesian(c(-100, 150))
