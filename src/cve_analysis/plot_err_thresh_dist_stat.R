@@ -40,8 +40,8 @@ ggarrange(
       subset(d, is.element(thresh_label, c("100", "20"))),
       aes(p_r)
     )
+    + geom_histogram(aes(y=..density.., fill="Histogram\n(All Thresholds)"), bins=100, position="identity", alpha=0.3)
     + geom_line(aes(color=thresh_label), stat="density", size=1)
-    + geom_histogram(aes(y=..density.., fill="All Thresholds"), bins=100, position="identity", alpha=0.3)
     + geom_vline(xintercept=0, linetype="dashed")
     + annotate(
       "text", -ann.xo, ann.y,
@@ -52,11 +52,11 @@ ggarrange(
       "text", 100+ann.xo, ann.y,
       label="Ice\nSurface"
     )
-    + scale_fill_manual(name="Histogram", values="black")
+    + scale_fill_manual(name=NULL, values="black")
     + xlab(lb.p_r)
     + ylab(lb.density)
     + coord_cartesian(c(-100, 150))
-    + labs(color=lb.threshold)
+    + labs(color="TFMRA\nThreshold (%)")
     + plthm
     + theme(legend.position = "bottom")
   ),

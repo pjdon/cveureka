@@ -108,12 +108,12 @@ makefunc.sql.fetch <- function(driver, dbname, host, port, user, password) {
 }
 
 # Factors ----
-style.factors <- function(factors, template="%s to %s") {
+style.factors <- function(factors, template="%s-%s") {
   parts = str_split(str_sub(factors, 2, -2), ",", simplify=TRUE)
   return(sprintf(template, parts[,1], parts[,2]))
 }
 
-pretty.cut <- function(data, ncuts, template="%s to %s") {
+pretty.cut <- function(data, ncuts, template="%s-%s") {
   temp = cut(data, ncuts)
   levels(temp) = style.factors(levels(temp), template)
   return(temp)

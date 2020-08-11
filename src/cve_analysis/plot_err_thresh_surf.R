@@ -89,12 +89,13 @@ ag.rw = aggr.by("rw")
 
 
 
-lb.salin = "Snowpack Salinity"
-lb.gsize = "Grain\nSize (mm)"
-lb.sdepth = "Snow\nDepth (cm)"
+lb.deform = "Ice\nType  "
+lb.salin = "Snowpack\nSalinity"
+lb.gsize = "Grain\nSize\n(cm)"
+lb.sdepth = "Snow\nDepth\n(cm)"
 lb.htopo = "H-Topo\n(cm)"
-lb.pp = "Pulse.\nPeak"
-lb.rw = "Return\nWidth (cm)"
+lb.pp = "Pulse\nPeak."
+lb.rw = "Return\nWidth\n(cm)"
 
 # Single Plot Function
 var_plot <- function(d, y, c, ylab, clab, extra1=NULL, extra2=NULL) {
@@ -106,8 +107,12 @@ var_plot <- function(d, y, c, ylab, clab, extra1=NULL, extra2=NULL) {
     + guides(color=guide_legend(nrow=2,byrow=TRUE, title.position = "left"))
     + plthm
     + theme(
+      axis.text=element_text(size=12),
       legend.position="top",
-      legend.margin=margin(t = 0, unit='cm')
+      legend.margin=margin(t = 0, unit='cm'),
+      legend.spacing.x = unit(0.01, 'cm'),
+      legend.spacing.y = unit(0.01, 'cm'),
+      legend.text = element_text(size=12)
     )
   )
 }
@@ -128,4 +133,4 @@ annotate_figure(
   bottom=lb.threshold,
   left=text_grob(lb.p_r, rot = 90)
 )
-save.plot("p_r_thresh_surf", 1.4, 1.3)
+save.plot("p_r_thresh_surf", 1.4, 1.1)
