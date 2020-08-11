@@ -1,6 +1,14 @@
 """Project Configuration"""
 from .tools import EchoContainer, attrs_to_dict
+from .xtypes import KwargsDict
+from .tools import RelativeConfigPathGetter
+from .logger import LoggerHub
+
+import sys
+import os
+from configparser import ConfigParser
 from sqlalchemy import types as SQLALCHEMYTYPE
+from typing import Tuple
 
 
 class CONST:
@@ -345,7 +353,7 @@ class PARAM:
     # DOI: 10.1109/IGARSS.2004.1369792
     freq = 13.5e9  # 13.5 GHz Ku band
     # w=f/v -> wavelength (m) = frequency / speed of light
-    wlength = 3e8 / freq
+    wlength = freq / CONST.c
     bwidth = 1e9  # 1 GHz bandwidth
     plength = 1 / bwidth  # compressed pulse length in seconds
     n_avg = 64  # number of the product pre-sums (averages)
@@ -359,7 +367,7 @@ class PARAM:
     pdlf_key = -1  # proxy radius key to differentiate it from circular ones
     # Circular footprints
     # will also consider circular footprints with these radii
-    # max radius is ~80m to capture all observation data
+    # max radius is ~40m to capture all observation data
     fp_radii = list(range(6, 41, 2))
 
     # OBSERVATION AGGREGATION
@@ -431,3 +439,51 @@ class DEFAULT:
     # in their function call arguments so it's clearer which steps use which
     # tables
     base_query_kwargs = attrs_to_dict(COL, PARAM, FUNC)
+
+
+def read_config() -> Tuple[RelativeConfigPathGetter, KwargsDict, KwargsDict]:
+    try:
+        config_path = sys.argv[1]
+    except IndexError:
+        raise IndexError("no config.ini path argument supplied")
+
+    if not os.path.isfile(config_path):
+        raise FileNotFoundError(
+            f"Config file not found at '{config_path}' with current working "
+            f"directory {os.getcwd()}"
+        )
+    else:
+        config_parser = ConfigParser()
+        config_parser.read(config_path)
+
+    # build file path getter
+    FILEPATH = RelativeConfigPathGetter(
+        config_parser['Files'],
+        'data_dir'
+    )
+
+    # build logging context management object
+    LOGGER = config_parser['Logger']
+    logger_hub = LoggerHub(**LOGGER)
+
+    # build database configuration
+    DB = config_parser['Database']
+    new_session_kwargs = dict(
+        host=DB['host'],
+        port=DB['port'],
+        dbname=DB['dbname'],
+        user=DB['user'],
+        password=DB['password'],
+        session_kwargs=dict(
+            default_schema=DB['default_schema'],
+            default_geom_col=DB['default_geom_col']
+        ),
+        logger_hub=logger_hub
+    )
+
+    new_process_kwargs = dict(
+        name='methods',
+        logger_hub=logger_hub
+    )
+
+    return FILEPATH, new_session_kwargs, new_process_kwargs

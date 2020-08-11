@@ -1,58 +1,13 @@
 import sys
-import os
-from configparser import ConfigParser
 
-from .config import TABLE, COL, COLCONFIG, SRID, PARAM
-from .tools import RelativeConfigPathGetter
-from .logger import LoggerHub
+from .config import read_config, TABLE, COL, COLCONFIG, SRID, PARAM
 from .postgis import new_session
 from .process import new_process, queries
 
 
 def main():
-    try:
-        config_path = sys.argv[1]
-    except IndexError:
-        raise IndexError("no config.ini path argument supplied")
 
-    if not os.path.isfile(config_path):
-        raise FileNotFoundError(
-            f"Config file not found at '{config_path}' with current working "
-            f"directory {os.getcwd()}"
-        )
-    else:
-        config_parser = ConfigParser()
-        config_parser.read(config_path)
-
-    # build file path getter
-    FILEPATH = RelativeConfigPathGetter(
-        config_parser['Files'],
-        'data_dir'
-    )
-
-    # build logging context management object
-    LOGGER = config_parser['Logger']
-    logger_hub = LoggerHub(**LOGGER)
-
-    # build database configuration
-    DB = config_parser['Database']
-    new_session_kwargs = dict(
-        host=DB['host'],
-        port=DB['port'],
-        dbname=DB['dbname'],
-        user=DB['user'],
-        password=DB['password'],
-        session_kwargs=dict(
-            default_schema=DB['default_schema'],
-            default_geom_col=DB['default_geom_col']
-        ),
-        logger_hub=logger_hub
-    )
-
-    new_process_kwargs = dict(
-        name='methods',
-        logger_hub=logger_hub
-    )
+    FILEPATH, new_session_kwargs, new_process_kwargs = read_config()
 
     drop_obsolete = False
 
