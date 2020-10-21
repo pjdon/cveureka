@@ -14,6 +14,24 @@ Evaluating Ice Surface Elevation Estimates using Airborne Radar Altimetry from t
 
 Clone this repository to a directory of your choice.
 
+### Obtaining L1B Data
+
+Most of the data used in this analysis is located in the `data` folder. The L1B ASIRAS and ALS airborne data from the CryoVEx 2014 campaign is not provided.
+
+To obtain this data, contact ESA and request the datasets listed below. Information about how to request data can be found at: https://earth.esa.int/web/guest/pi-community/apply-for-data/campaigns
+
+By default, both files should be placed into `data/l1b`
+
+#### ASIRAS
+* **File Name**: `AS3OA03_ASIWL1B040320140325T160941_20140325T164233_0001.DBL`
+* **Date**: 2014/03/25
+* **Product**: L1B
+
+#### ALS
+* **File Name**: `AS3OA03_ASIWL1B040320140325T160941_20140325T164233_0001.DBL`
+* **Date**: 2014/03/25
+* **Product**: L1B
+
 ### Anaconda 3 Environment
 
 1. Install Anaconda 3 from https://repo.anaconda.com/archive/ or https://repo.continuum.io/archive/
@@ -21,7 +39,7 @@ Clone this repository to a directory of your choice.
    Preferably version `2019.10` for Windows 10, although future versions on other platforms are likely to work as well.
 
 2. Create a new conda environment from the supplied `cveureka.yml` file by running 
-   `conda env create -f "<path_to_project>/cveureka.yml"`
+   `conda env create -f "<path_to_project>/cveureka.yml"` from the Anaconda prompt
 
    This should create a new environment in your `Anaconda3/envs` directory called `cveureka`. The environment will contain Python 3.7 and all the necessary packages.
 
@@ -34,8 +52,10 @@ Clone this repository to a directory of your choice.
    Alternatively you can use a remote PostgreSQL connection.
 
    This project was developed on version 10, so your version must be equal or greater. If you have issues with deprecated features, try using version 10.
+   
+2. Create a new target database if one doesn't exist
 
-2. Install PostGIS in the target database. Steps will vary depending on platform https://postgis.net/install/
+3. Install PostGIS in the target database. Steps will vary depending on platform https://postgis.net/install/
 
 ### Configuration
 
@@ -66,7 +86,6 @@ To run in Windows, use the following commands with the repository root folder as
 ```bash
 conda activate
 python -m src.example "config.ini"
-
 ```
 
 A batch file `method.bat` is provided with default configuration for running in Windows.
