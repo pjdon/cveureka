@@ -7,7 +7,12 @@ from .process import new_process, queries
 
 def main():
 
-    FILEPATH, new_session_kwargs, new_process_kwargs = read_config()
+    try:
+        config_path = sys.argv[1]
+    except IndexError:
+        raise SystemError("no config.ini path argument supplied")
+
+    filepath, new_session_kwargs, new_process_kwargs = read_config(config_path)
 
     drop_obsolete = False
 
@@ -24,39 +29,39 @@ def main():
         # load input data
         # CryoVEX Airborne Observations - L1B format
         process.load_asiras(
-            FILEPATH.get('asr'), TABLE.asr_src, COL.id_asr, COL.longitude,
+            filepath.get('asr'), TABLE.asr_src, COL.id_asr, COL.longitude,
             COL.latitude,
             SRID.source, SRID.eureka
         )
         process.load_als(
-            FILEPATH.get('als'), TABLE.als_src, COL.id_als, COL.snow_elvtn,
+            filepath.get('als'), TABLE.als_src, COL.id_als, COL.snow_elvtn,
             SRID.eureka,
         )
         # grid zone areas
         process.load_shp(
-            "Grid Zones", FILEPATH.get('grid_zones'), TABLE.grid_zones,
+            "Grid Zones", filepath.get('grid_zones'), TABLE.grid_zones,
             COLCONFIG.grid_zones, COL.id_gzone,
         )
         # Ice deformed classication from King et al. 2015
         process.load_shp(
-            "Ice Deformed Class", FILEPATH.get('idc'), TABLE.idc_src,
+            "Ice Deformed Class", filepath.get('idc'), TABLE.idc_src,
             COLCONFIG.idc, COL.id_idc
         )
         # Eureka ground measurements
         process.load_csv_with_xy(
-            "Magnaprobe", FILEPATH.get('mgn'), TABLE.mgn_src, COLCONFIG.mgn,
+            "Magnaprobe", filepath.get('mgn'), TABLE.mgn_src, COLCONFIG.mgn,
             COL.longitude, COL.latitude, SRID.source, SRID.eureka,
             COL.id_mgn
         )
         process.load_csv_with_xy(
-            "ESC-30", FILEPATH.get('esc30'), TABLE.esc30_src, COLCONFIG.esc30,
+            "ESC-30", filepath.get('esc30'), TABLE.esc30_src, COLCONFIG.esc30,
             COL.longitude, COL.latitude, SRID.source, SRID.eureka,
             COL.id_esc30
         )
         # Eureka snow pits
         # info table with spatial coordinates
         process.load_csv_with_xy(
-            "Snow Pit Info", FILEPATH.get('pit_info'), TABLE.pit_info,
+            "Snow Pit Info", filepath.get('pit_info'), TABLE.pit_info,
             COLCONFIG.pit_info,
             COL.longitude, COL.latitude, SRID.source, SRID.eureka,
             COL.id_pit
@@ -64,8 +69,8 @@ def main():
         # measurement tables
         for path, name, table, col_config in zip(
                 [
-                    FILEPATH.get('pit_dens'), FILEPATH.get('pit_salin'),
-                    FILEPATH.get('pit_strat'), FILEPATH.get('pit_temp')
+                    filepath.get('pit_dens'), filepath.get('pit_salin'),
+                    filepath.get('pit_strat'), filepath.get('pit_temp')
                 ],
                 ["Density", "Salinity", "Stratigraphy", "Temperature"],
                 [

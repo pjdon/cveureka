@@ -4,7 +4,6 @@ from .xtypes import KwargsDict
 from .tools import RelativeConfigPathGetter
 from .logger import LoggerHub
 
-import sys
 import os
 from configparser import ConfigParser
 from sqlalchemy import types as SQLALCHEMYTYPE
@@ -349,7 +348,7 @@ class FUNC(EchoContainer):
 class PARAM:
     """Processing parameters"""
 
-    # RADAR SPECIFICATIONS
+    # ASIRAS RADAR SPECIFICATIONS
     # DOI: 10.1109/IGARSS.2004.1369792
     freq = 13.5e9  # 13.5 GHz Ku band
     # w=f/v -> wavelength (m) = frequency / speed of light
@@ -407,15 +406,6 @@ class PARAM:
             'snow_depth_mean<=0.10',  # maximum average snow depth
             'ice_deform_max<=0',  # highest allowable maximum ice deform
             'ocog_width>0'  # excludes erroneous returns
-        ],
-        # c18 shallow-snow calibration
-        ssnow=[
-            'fp_size=-1',
-            # footprint size for aggregating surface measurements
-            'snow_depth_count>=4',  # minimum number of observation points
-            'snow_depth_mean<=0.10',  # maximum average snow depth
-            'ocog_width>0',  # excludes erroneous returns
-            'grid_zone=3'  # in confirmed flat grid 3 area
         ]
     )
 
@@ -441,11 +431,9 @@ class DEFAULT:
     base_query_kwargs = attrs_to_dict(COL, PARAM, FUNC)
 
 
-def read_config() -> Tuple[RelativeConfigPathGetter, KwargsDict, KwargsDict]:
-    try:
-        config_path = sys.argv[1]
-    except IndexError:
-        raise IndexError("no config.ini path argument supplied")
+def read_config(
+        config_path: str
+) -> Tuple[RelativeConfigPathGetter, KwargsDict, KwargsDict]:
 
     if not os.path.isfile(config_path):
         raise FileNotFoundError(
@@ -457,26 +445,26 @@ def read_config() -> Tuple[RelativeConfigPathGetter, KwargsDict, KwargsDict]:
         config_parser.read(config_path)
 
     # build file path getter
-    FILEPATH = RelativeConfigPathGetter(
+    filepath = RelativeConfigPathGetter(
         config_parser['Files'],
         'data_dir'
     )
 
     # build logging context management object
-    LOGGER = config_parser['Logger']
-    logger_hub = LoggerHub(**LOGGER)
+    logger = config_parser['Logger']
+    logger_hub = LoggerHub(**logger)
 
     # build database configuration
-    DB = config_parser['Database']
+    db = config_parser['Database']
     new_session_kwargs = dict(
-        host=DB['host'],
-        port=DB['port'],
-        dbname=DB['dbname'],
-        user=DB['user'],
-        password=DB['password'],
+        host=db['host'],
+        port=db['port'],
+        dbname=db['dbname'],
+        user=db['user'],
+        password=db['password'],
         session_kwargs=dict(
-            default_schema=DB['default_schema'],
-            default_geom_col=DB['default_geom_col']
+            default_schema=db['default_schema'],
+            default_geom_col=db['default_geom_col']
         ),
         logger_hub=logger_hub
     )
@@ -486,4 +474,4 @@ def read_config() -> Tuple[RelativeConfigPathGetter, KwargsDict, KwargsDict]:
         logger_hub=logger_hub
     )
 
-    return FILEPATH, new_session_kwargs, new_process_kwargs
+    return filepath, new_session_kwargs, new_process_kwargs
