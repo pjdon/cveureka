@@ -1,0 +1,147 @@
+id_pit,hag_top,hag_bottom,pit_snow_depth,hbs_top,hbs_bottom,section_height,gs1,gs2,gs3,gl1,gl2,gl3,short_grain_size,long_grain_size,grain_type,comments,has_crust,has_slab
+1,12.5,10,12.5,0,2.5,2.5,,,,,,,,,Mixed Snow,Decomposing Capped Collumns and Needles. 0.1-0.2 mm. 4F.,,
+1,10,4,12.5,2.5,8.5,6,,,,,,,,,Round,Wind rounded. 0.1-0.2 mm 1F.,,
+1,4,3.8,12.5,8.5,8.7,0.2,,,,,,,,,Faceted,Parting with 0.2-0.5 mm solid facets,,
+1,3.8,2,12.5,8.7,10.5,1.8,,,,,,,,,Faceted,Solid facets 0.2-0.5 mm,,
+1,2,0,12.5,10.5,12.5,2,,,,,,,,,Depth Hoar,Cuped depth hoar well bonded. 1-1.5. P.,,
+2,10,7,10,0,3,3,,,,,,,,,Round,Almost entirely wind rounded grains. Pen hard. 0.1-0.25 mm.,,
+2,7,3,10,3,7,4,,,,,,,,,Mixed Snow,Wind rounded and solid facets. 0.25-0.5 mm. Pen hard.,,
+2,3,0,10,7,10,3,,,,,,,,,Depth Hoar,Depth hoar cups and some prisims. 1-2 mm. 4F.,,
+3,19,8,19,0,11,11,,,,,,,,,Mixed Snow,Mix of decomposing (capped cols) and wind rounded grains 0.2-0.5 mm 4F,,
+3,8,4,19,11,15,4,,,,,,,,,Mixed Snow,Solid facets and depth hoar 0.1-1.5 mm 1F,,
+3,4,0,19,15,19,4,,,,,,,,,Depth Hoar,Mostly cups 1-2 mm 4F,,
+4,20.5,10,20.5,0,10.5,10.5,,,,,,,,,Round,Wind rounded grains pen hard 0.1-0.25,,
+4,10,4,20.5,10.5,16.5,6,,,,,,,,,Mixed Snow,Wind rounde grains and solid facets 0.5-1.0 pen hard,,
+4,4,0,20.5,16.5,20.5,4,,,,,,,,,Depth Hoar,Depth hoar cups 1-3 mm some prisms found finger hard.,,
+5,8.5,4,8.5,0,4.5,4.5,,,,,,,,,Round,Wind rounded graind with some decomposing capped cols. 0.2-0.3 mm. VERY HARD Knife.,,
+5,4,0,8.5,4.5,8.5,4,,,,,,,,,Depth Hoar,Depth hoar cups 1-3 mm 4F.,,
+6,20,12.5,20,0,7.5,7.5,0.1,0.25,0.25,0.5,0.5,1,0.2,0.666666667,Mixed Snow,"Really complex soft slab. Mixed Solid facets, wind grains, and old needle precip. 4f",,
+6,12.5,10,20,7.5,10,2.5,1,1.5,1,0.75,0.5,0.75,1.166666667,0.666666667,Mixed Snow,"Wind rounded, with solid facets/small dh cups 4f",,
+6,10,9.5,20,10,10.5,0.5,,,,,,,,,,Strong crust pen hard,,
+6,9.5,8,20,10.5,12,1.5,1,1.5,1.5,1,0.5,1,1.333333333,0.833333333,Depth Hoar,Finger hard. Small ice crust on bottom edge.,,
+6,8,0,20,12,20,8,1,1.5,1.5,2,3,2,1.333333333,2.333333333,Depth Hoar,Chains of depth hoar.,,
+7,17,13,17,0,4,4,0.1,0.2,0.2,0.1,0.5,0.5,0.166666667,0.366666667,Mixed Snow,"Big mix of wind rounded grains, old precip (needles/cappd cols) and solid facets. Fist hard. Soft slab.",,
+7,13,12.9,17,4,4.1,0.1,,,,,,,,,,Weak crust,,
+7,12.9,10,17,4.1,7,2.9,1,0.5,0.2,0.5,0.5,0.2,0.566666667,0.4,Mixed Snow,"Mostly solid facets, wind blown grains and a few dh cups present. 4 F.",,
+7,10,7,17,7,10,3,1,1,1.5,1.5,2,2,1.166666667,1.833333333,Depth Hoar,Depth hoar cups,,
+7,7,0,17,10,17,7,1,2,1,3,3,3,1.333333333,3,Depth Hoar,Chains of depth hoar cups,,
+8,31,23,31,0,8,8,0.1,0.2,0.2,0.2,0.2,0.2,0.166666667,0.2,Mixed Snow,Fist hard Wind rounded and solid facets,,
+8,23,22,31,8,9,1,,,,,,,,,,Parting,,
+8,22,16,31,9,15,6,1,0.5,0.5,1,0.5,0.1,0.666666667,0.533333333,Faceted,Knife hard,,
+8,16,10,31,15,21,6,1,1.5,1,2,3,2,1.166666667,2.333333333,Depth Hoar,Cups,,
+8,10,0,31,21,31,10,4,2,4,6,3,6,3.333333333,5,Depth Hoar,Very large depth hoar,,
+9,15.5,12,15.5,0,3.5,3.5,0.1,0.1,0.2,0.2,0.2,0.5,0.133333333,0.3,Mixed Snow,Soft slab composed of wind rounded grains and decomposing needle precip. 4F.,,
+9,12,9,15.5,3.5,6.5,3,0.5,0.5,0.2,0.5,0.5,0.2,0.4,0.4,Mixed Snow,Wind rounded grains and solid facets. 4 F.,,
+9,9,7,15.5,6.5,8.5,2,1,1.5,1,1.5,2,2,1.166666667,1.833333333,Mixed Snow,Faceted and DH grains. 1 F hard.,,
+9,7,5,15.5,8.5,10.5,2,1,1.5,1,2,3,2,1.166666667,2.333333333,Depth Hoar,Depth hoar cups. 1F.,,
+9,5,0,15.5,10.5,15.5,5,2,2,3,3,4,6,2.333333333,4.333333333,Depth Hoar,Lage cups and chains of cups. 4 F.,,
+10,13,12.8,13,0,0.2,0.2,0.1,0.2,0.1,0.2,0.2,0.1,0.133333333,0.166666667,Round,"Wind rounded grains, crust feature, 1F",,
+10,12.8,11,13,0.2,2,1.8,1,1,1,2,1,1,1,1.333333333,Depth Hoar,DH cups in small layer below the crust,,
+10,11,7,13,2,6,4,1,1.5,1,1,2,1,1.166666667,1.333333333,Mixed Snow,"Wind rounded and solid facets, pen hard",,
+10,7,4,13,6,9,3,1,1.5,1,2,2,2,1.166666667,2,Depth Hoar,"Dh cups, 4F",,
+10,4,0,13,9,13,4,1,2,1,3,4,3,1.333333333,3.333333333,Depth Hoar,Transitional boarder from previous layer (not a hard change). Large chains 4f.,,
+11,15,11,15,0,4,4,0.1,0.1,0.2,0.1,0.1,0.2,0.133333333,0.133333333,Mixed Snow,"Soft slab, wind rounded and decompsing needles 1F",,
+11,11,8,15,4,7,3,1,1,1,1,2,1,1,1.333333333,Mixed Snow,Solid facets and wind rounded  fist hard with hard crust at bottom,,
+11,8,6,15,7,9,2,1,1.5,1,2,2,2,1.166666667,2,Mixed Snow,"Facets and depth hoar. Very hard, pen",,
+11,6,0,15,9,15,6,1,1,2,3,2,3,1.333333333,2.666666667,Depth Hoar,large chains fist hard,,
+12,12.5,12.1,12.5,0,0.4,0.4,0.1,0.2,0.1,0.1,0.2,0.1,0.133333333,0.133333333,Round,Small wind rounded crust 1F,,
+12,12.1,9,12.5,0.4,3.5,3.1,1,1,2,1,1,3,1.333333333,1.666666667,Mixed Snow,Facets and DH cups fist hard,,
+12,9,6,12.5,3.5,6.5,3,0.5,1,0.5,0.5,1,0.5,0.666666667,0.666666667,Round,"Hard Slab, Pen hard really small grains",,
+12,6,0,12.5,6.5,12.5,6,1,1,2,3,2,3,1.333333333,2.666666667,Depth Hoar,Cohesive cups 4H,,
+13,20.5,12,20.5,0,8.5,8.5,0.25,0.5,0.1,0.25,0.5,0.1,0.283333333,0.283333333,Mixed Snow,Wind rounded and decomp needles 4f,,
+13,12,10,20.5,8.5,10.5,2,1,0.5,1,1.5,1,2,0.833333333,1.5,Mixed Snow,Parting. Facets and dh cups 1F,,
+13,10,7,20.5,10.5,13.5,3,1,2,2,1.5,3,2.5,1.666666667,2.333333333,Depth Hoar,"DH cups, weak crust on bottom, 4F",,
+13,7,0,20.5,13.5,20.5,7,3,2,3,5,4,6,2.666666667,5,Depth Hoar,DH chains fist,,
+14,27,18.5,27,0,8.5,8.5,0.2,0.2,0.2,0.2,0.2,0.5,0.2,0.3,Round,"Soft slab /w wind rounded grains, 1F",,
+14,18.5,16,27,8.5,11,2.5,0.5,0.5,0.5,0.5,0.25,0.25,0.5,0.333333333,Faceted,"Parting, faceted, fist hard",,
+14,16,6,27,11,21,10,0.2,0.2,1,0.2,0.5,1,0.466666667,0.566666667,Mixed Snow,"faceted and wind rounded grains, knife hard",,
+14,6,0,27,21,27,6,3,3,4,3,5,5,3.333333333,4.333333333,Depth Hoar,"Chains of dh cups, fist hard",,
+15,20,16,20,0,4,4,0.2,0.2,0.2,0.2,0.5,0.2,0.2,0.3,Round,"Soft slab /w wind rounded grains, 1F.",0,1
+15,16,13,20,4,7,3,0.5,0.5,1,0.5,0.75,1.5,0.666666667,0.916666667,Mixed Snow,"Parting, faceted and dh cups, fist",0,0
+15,13,2,20,7,18,11,0.5,0.5,1,0.5,0.5,1,0.666666667,0.666666667,Mixed Snow,"Facets and wind rounded grains, knife hard",0,0
+15,2,0,20,18,20,2,1,2,1,1.5,2,1.5,1.333333333,1.666666667,Depth Hoar,"DH cups, no chains, very thin, fist",0,0
+17,12,8.5,12,0,3.5,3.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Soft wind slab, 1F",0,1
+17,8.5,8,12,3.5,4,0.5,1,1.5,1,1,3,2,1.166666667,2,Faceted,"Solid facets, weak layer, fist",0,0
+17,8,0,12,4,12,8,2,3,2,3,4,4,2.333333333,3.666666667,Depth Hoar,"Large, cups, few chains, 1F",0,0
+18,15,14,15,0,1,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Small wind crust, 1F",1,0
+18,14,10.5,15,1,4.5,3.5,1,1.5,1,1,1.5,1,1.166666667,1.166666667,Faceted,"Solid facets, fist",0,0
+18,10.5,8,15,4.5,7,2.5,1,0.5,1,1,0.5,1,0.833333333,0.833333333,Mixed Snow,"Solid facets and wind rounded grains, slab like, pen",0,1
+18,8,0,15,7,15,8,2,2,3,3,4,4,2.333333333,3.666666667,Depth Hoar,"Few chains, arge cups, 4F",0,0
+19,32,31,32,0,1,1,0.1,0.1,0.25,0.1,0.1,25,0.15,8.4,Round,"Small wind crust, 1F",1,0
+19,31,27,32,1,5,4,1,1.5,1,2,3,2,1.166666667,2.333333333,Mixed Snow,"Partingm mix of faceted and dh cups, fist",0,0
+19,27,24,32,5,8,3,1,0.5,1,1,0.5,1,0.833333333,0.833333333,Faceted,"Almost entirely small facets, 1F",0,0
+19,24,22,32,8,10,2,2,1,1.5,3,2,3,1.5,2.666666667,Depth Hoar,"Parting with dh cups, fist",0,0
+19,22,14,32,10,18,8,1,0.5,1,2,1,2,0.833333333,1.666666667,Mixed Snow,"Facets and dh cups, pen hard",0,0
+19,14,0,32,18,32,14,3,3,3,6,4,5,3,5,Depth Hoar,"Chains of DH cups, fist hard.",0,0
+20,20,19,20,0,1,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Small wind crust, 1F",1,0
+20,19,17,20,1,3,2,1,1,0.5,1,1,0.5,0.833333333,0.833333333,Mixed Snow,"Parting with solid facets and DH cups, fist",0,0
+20,17,15,20,3,5,2,1,1.5,1,2,3,2,1.166666667,2.333333333,Faceted,"Solid facets, 1F",0,0
+20,15,13,20,5,7,2,1,1.5,1,2,3,2,1.166666667,2.333333333,Depth Hoar,"DH cups, parting, fist",0,0
+20,13,8,20,7,12,5,0.5,0.5,1,0.5,0.5,1,0.666666667,0.666666667,Faceted,"Solid facets, slab like, pen",0,0
+20,8,0,20,12,20,8,2,1,2,3,3,4,1.666666667,3.333333333,Depth Hoar,"DH cups, 4F",0,0
+21,17,16,17,0,1,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Small wind crust, 1F",1,0
+21,16,15,17,1,2,1,1,1.5,1,2,3,2,1.166666667,2.333333333,Mixed Snow,"Solid facets and DH cups, fist hard",0,0
+21,15,7,17,2,10,8,1,1,1,1,1,0.5,1,0.833333333,Faceted,"Solid facets, 1F",0,0
+21,7,6,17,10,11,1,1,2,1,2,3,2,1.333333333,2.333333333,Depth Hoar,"DH cups, fist",0,0
+21,6,3,17,11,14,3,0.5,1,0.75,1,2,2,0.75,1.666666667,Mixed Snow,"Solid facets and dh cups, pen hard, slab like",0,1
+21,3,0,17,14,17,3,2,3,2,3,4,3,2.333333333,3.333333333,Depth Hoar,"Chained large dh cups, 4F",0,0
+22,13,12.5,13,0,0.5,0.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Wind rounded grains in a small surface crust, 1F",,
+22,12.5,11,13,0.5,2,1.5,0.1,0.25,0.25,0.1,0.25,0.25,0.2,0.2,Mixed Snow,"Mix of wind rounded and solid facets, 4F",,
+22,11,10,13,2,3,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Small wind rounded crust, 1F",,
+22,10,8,13,3,5,2,1,1.5,1,1,3,3,1.166666667,2.333333333,Depth Hoar,"DH cups, 4F",,
+22,8,7,13,5,6,1,1,1.5,1,1,2,1,1.166666667,1.333333333,Faceted,"Solid facets, 1F",,
+22,7,0,13,6,13,7,2,3,2,3,4,4,2.333333333,3.666666667,Depth Hoar,"Chains of DH cups, 4F",,
+23,22,11,22,0,11,11,0.25,0.25,0.5,0.25,0.25,0.5,0.333333333,0.333333333,Round,"Wind slab, rounded, 1F to Pen hard",,
+23,11,6,22,11,16,5,,,,,,,,,Depth Hoar,"DH cups, fist hard",,
+23,6,4,22,16,18,2,,,,,,,,,Faceted,"Faceted grains, size not recorded, Pen hard",,
+23,4,0,22,18,22,4,4,3,4,5,6,6,3.666666667,5.666666667,Depth Hoar,Chains of depth hoar,,
+24,32,21,32,0,11,11,0.1,0.1,0.2,0.1,0.1,0.2,0.133333333,0.133333333,Round,"Very dense wind slab, pen hard",,
+24,21,16,32,11,16,5,2,1,3,3,3,3,2,3,Depth Hoar,"fist hard, dh cups",,
+24,16,4,32,16,28,12,2,1,2,3,1,1,1.666666667,1.666666667,Mixed Snow,"Solid facets (mostly) and dh cups, pen",,
+24,4,0,32,28,32,4,1,1,1,2,1.5,1,1,1.5,Depth Hoar,"Small DH cups, fist hard",,
+25,10,7.5,10,0,2.5,2.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Wind slab, 1F",,
+25,7.5,6,10,2.5,4,1.5,3,2,1,3,3,1,2,2.333333333,Mixed Snow,"Solid facets and dh cups, fist hard",,
+25,6,4,10,4,6,2,1,1,0.5,1,2,0.5,0.833333333,1.166666667,Mixed Snow,"Old slab, pen, wind grains and solid facets",,
+25,4,0,10,6,10,4,2,1,1,3,3,2,1.333333333,2.666666667,Depth Hoar,"DH cups, 4F",,
+26,15,1.5,15,0,13.5,13.5,0.25,0.1,1.5,0.2,0.1,2,0.616666667,0.766666667,Mixed Snow,"Wind slab with faceted crystals, indurated at the bottom. Knife hard",,
+26,1.5,0,15,13.5,15,1.5,1,1,1,2,1,2,1,1.666666667,Depth Hoar,Small dh cups,,
+27,14,0,14,0,14,14,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,Pen hard wind slab,,
+27,7,7,14,7,7,0,0.5,0.5,1,0.5,0.5,1.5,0.666666667,0.833333333,Mixed Snow,"Knife hard slab with faceted grains, indurated at the bottom",,
+27,5,9,14,9,5,-4,1,2,4,4,3,6,2.333333333,4.333333333,Depth Hoar,"Lage dh cups, 1F",,
+27,0,14,14,14,0,-14,,,,,,,,,,,,
+28,13,12.5,13,0,0.5,0.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Wind rounded grains in a small surface crust, 1F",1,0
+28,12.5,11,13,0.5,2,1.5,0.1,0.25,0.25,0.1,0.25,0.25,0.2,0.2,Mixed Snow,"Mix of wind rounded and solid facets, 4F",0,0
+28,11,10,13,2,3,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Small wind rounded crust, 1F",1,0
+28,10,8,13,3,5,2,1,1.5,1,1,3,3,1.166666667,2.333333333,Depth Hoar,"DH cups, 4F",0,0
+28,8,7,13,5,6,1,1,1.5,1,1,2,1,1.166666667,1.333333333,Faceted,"Solid facets, 1F",0,0
+28,7,0,13,6,13,7,2,3,2,3,4,4,2.333333333,3.666666667,Depth Hoar,"Chains of DH cups, 4F",0,0
+29,21,10,21,0,11,11,0.1,0.25,0.25,0.1,0.25,0.25,0.2,0.2,Round,"Soft wind slab, 1F",0,1
+29,10,7,21,11,14,3,1,0.5,1,1,0.5,1,0.833333333,0.833333333,Faceted,"Solid facets, fist",0,0
+29,7,6.5,21,14,14.5,0.5,0.5,0.25,0.5,0.5,0.25,0.5,0.416666667,0.416666667,Mixed Snow,"Wind rounded and solid facets, too small for hardness",0,0
+29,6.5,4.5,21,14.5,16.5,2,1,1.5,1,1,1.5,1,1.166666667,1.166666667,Faceted,"Gradient of size, indurated at top, 1F",0,0
+29,4.5,2,21,16.5,19,2.5,1,1,1,1,1.5,1,1,1.166666667,Mixed Snow,"Facets and dh cups, pen ",0,0
+29,2,0,21,19,21,2,2,1,1,3,2,3,1.333333333,2.666666667,Depth Hoar,DH cups 1F,0,0
+30,13,6,13,0,7,7,0.5,0.5,1,0.5,0.5,1,0.666666667,0.666666667,Mixed Snow,"Mixed wind rounded grains and solid facets, pen",0,0
+30,6,0,13,7,13,6,3,4,3,4,6,5,3.333333333,5,Depth Hoar,"Chains of DH cups, fist",0,0
+31,13,9,13,0,4,4,0.25,0.5,0.5,0.25,0.5,0.5,0.416666667,0.416666667,Round,"Soft wind slab, 4F",1,0
+31,9,7.5,13,4,5.5,1.5,0.5,0.5,0.75,0.5,0.5,0.75,0.583333333,0.583333333,Faceted,"Parting, fist hard, solid facets",0,0
+31,7.5,5,13,5.5,8,2.5,1,0.5,1,2,1,2,0.833333333,1.666666667,Mixed Snow,"Mixed dh cups and solid facets, 1F",0,0
+31,5,0,13,8,13,5,2,3,1,3,4,2,2,3,Depth Hoar,"DH cups, pen / 1f hard",0,0
+32,19.5,12,19.5,0,7.5,7.5,0.25,0.25,0.5,0.25,0.25,0.5,0.333333333,0.333333333,Round,"Soft wind slab, 4F",0,1
+32,12,6,19.5,7.5,13.5,6,1,1.5,1,2,2,1,1.166666667,1.666666667,Mixed Snow,"Mixed solid facets and dh cups, fist, mostly SF",0,0
+32,6,0,19.5,13.5,19.5,6,2,1,2,3,3,4,1.666666667,3.333333333,Depth Hoar,"DH cups , 1F",0,0
+33,16,7,16,0,9,9,0.25,0.5,0.25,0.25,0.5,0.5,0.333333333,0.416666667,Mixed Snow,"Slab with mix of solid facets and wind rounded grains, pen",0,1
+33,7,0,16,9,16,7,1,1.5,2,2,3,3,1.5,2.666666667,Depth Hoar,"DH cups, some induarated at the top of the layer, 4F",0,0
+34,16,15,16,0,1,1,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Wind slab, 1f",0,1
+34,12,11.5,16,4,4.5,0.5,1,1,1,1,1.5,2,1,1.5,Depth Hoar,"DH cups, 4F",0,0
+34,10,7,16,6,9,3,0.5,0.5,0.75,0.5,1,0.75,0.583333333,0.75,Faceted,"Solid facets, cohesive, pen hard",0,0
+34,4,0,16,12,16,4,2,2,3,3,4,3,2.333333333,3.333333333,Depth Hoar,"DH cups, 1F",0,0
+35,17.5,15,17.5,0,2.5,2.5,0.25,0.5,0.5,0.25,0.5,0.5,0.416666667,0.416666667,Round,"Small slab/crust, 1F",1,1
+35,15,11.5,17.5,2.5,6,3.5,1,1.5,1,1,1.5,1,1.166666667,1.166666667,Faceted,"Solid facets, 4F",0,0
+35,11.5,10,17.5,6,7.5,1.5,0.75,1,1,0.75,1,1,0.916666667,0.916666667,Mixed Snow,"Small crust, 1F",1,0
+35,10,0,17.5,7.5,17.5,10,3,4,3,3,6,5,3.333333333,4.666666667,Depth Hoar,"Chains of depth hoar cups, 4F",0,0
+36,32.5,12,32.5,0,20.5,20.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Wind slab, 1F",0,1
+36,12,10,32.5,20.5,22.5,2,1,1.5,2,2,2,2,1.5,2,Faceted,"Solid facets, pen",0,0
+36,10,0,32.5,22.5,32.5,10,2,3,2,3,4,4,2.333333333,3.666666667,Depth Hoar,"DH cups + chains, fist",0,0
+37,9,5.5,33.5,24.5,28,3.5,0.1,0.1,0.25,0.1,0.1,0.25,0.15,0.15,Round,"Hard wind slab, knife",,
+37,5.5,0,34.5,29,34.5,5.5,1,2,2,2,3,3,1.666666667,2.666666667,Depth Hoar,"DH cups, 4F",,

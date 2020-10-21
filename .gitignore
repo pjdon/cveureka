@@ -5,9 +5,8 @@
 __pycache__
 
 
-
-# Large File Containers
-data
+# Files too large to fit into repository
+data/l1b
 
 # Temp Processes
 manage

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY saga-version="2.3.2">
+    <MODULE library="shapes_grid" id="3" name="Grid Values to Points">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+        <CELLSIZE>8</CELLSIZE>
+        <XMIN>499020</XMIN>
+        <XMAX>509388</XMAX>
+        <YMIN>8855828</YMIN>
+        <YMAX>8927388</YMAX>
+      </OPTION>
+      <OPTION type="boolean" id="NODATA" name="Exclude NoData Cells">TRUE</OPTION>
+      <OPTION type="choice" id="TYPE" name="Type" index="0">nodes</OPTION>
+      <INPUT_LIST type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM">
+        <OIBreclassified type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM">
+          <FILE>C:/Users/deimos/AppData/Local/Temp/processing_dedf938d6afd480d8eb51c571f761cef/d30804ac9e2e46d796da6f66637d0952/OIBreclassified.sgrd</FILE>
+        </OIBreclassified>
+      </INPUT_LIST>
+      <OUTPUT type="shapes" id="SHAPES" name="Shapes">Grid Values [Nodes]</OUTPUT>
+    </MODULE>
+  </HISTORY>
+  <SOURCE>
+    <FILE></FILE>
+    <DATABASE>
+      <FIELDS>
+        <FIELD TYPE="INTEGER">ID</FIELD>
+        <FIELD TYPE="DOUBLE">X</FIELD>
+        <FIELD TYPE="DOUBLE">Y</FIELD>
+        <FIELD TYPE="DOUBLE">OIBreclassified</FIELD>
+      </FIELDS>
+    </DATABASE>
+    <PROJECTION>
+      <OGC_WKT>PROJCS["WGS 84 / UTM zone 16N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-87],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32616"]]</OGC_WKT>
+      <PROJ4>+init=epsg:32616 +proj=tmerc +a=6378137.000000 +b=6356752.314245 +lat_0=0 +lon_0=-87 +k_0=0.9996 +x_0=500000 +y_0=0 +no_defs</PROJ4>
+      <EPSG>-1</EPSG>
+    </PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>
