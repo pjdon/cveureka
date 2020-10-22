@@ -55,6 +55,8 @@ makefunc.save.plot <- function(
       # throughout the whole document
       height=width/ratio
       
+      dir.create(path, showWarnings = FALSE)
+      
       ggsave(
         sprintf("%s%s.png", prefix, name),
         path=path,
