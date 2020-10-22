@@ -28,7 +28,7 @@ By default, both files should be placed into `data/l1b`
 * **Product**: L1B
 
 #### ALS
-* **File Name**: `AS3OA03_ASIWL1B040320140325T160941_20140325T164233_0001.DBL`
+* **File Name**: `ALS_L1B_20140325T160930_164957`
 * **Date**: 2014/03/25
 * **Product**: L1B
 
