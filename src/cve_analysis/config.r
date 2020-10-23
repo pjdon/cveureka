@@ -8,7 +8,7 @@ cfg.name = "config.ini"
 cfg.filter = "*.ini"
 
 # Get configuration ini
-config = get.config(cfg.dir, cfg.name, cg.filter)
+config = get.config(cfg.dir, cfg.name, cfg.filter)
 
 # PostgreSQL database ----
 # modify these parameters to point to your postgis database
