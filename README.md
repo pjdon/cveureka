@@ -14,11 +14,13 @@ Evaluating Ice Surface Elevation Estimates using Airborne Radar Altimetry from t
 
 Clone this repository to a directory of your choice.
 
-### Obtaining L1B Data
+### Airborne L1B Data
 
 Most of the data used in this analysis is located in the `data` folder. The L1B ASIRAS and ALS airborne data from the CryoVEx 2014 campaign is not provided.
 
 To obtain this data, contact ESA and request the datasets listed below. Information about how to request data can be found at: https://earth.esa.int/web/guest/pi-community/apply-for-data/campaigns
+
+or by its DOI: https://doi.org/10.5270/esa-aa4xtkn
 
 By default, both files should be placed into `data/l1b`
 
@@ -31,6 +33,10 @@ By default, both files should be placed into `data/l1b`
 * **File Name**: `ALS_L1B_20140325T160930_164957`
 * **Date**: 2014/03/25
 * **Product**: L1B
+
+### CryoVEx 2014 Ground Observations Data
+
+A modified version of this dataset is included in the repository. The original can be found at the DOI: https://doi.org/10.5281/zenodo.823679
 
 ### Anaconda 3 Environment
 
@@ -68,8 +74,6 @@ By default, both files should be placed into `data/l1b`
 2. Modify the `data_dir` variable in the `Files` section to match the location of the `data` folder which contains all of the input datasets needed to run the methods procedure. By default the folder is located inside the root repository directory.
 
    The individual dataset variables do not have to be modified and should sit inside the `data` folder.
-
-   Due to their size, the input datasets are not available in this repository. Contact the author for details on how to obtain them.
 
 ## Usage
 
