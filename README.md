@@ -34,7 +34,7 @@ By default, both files should be placed into `data/l1b`
 * **Date**: 2014/03/25
 * **Product**: L1B
 
-### CryoVEx 2014 Ground Observations Data
+### ECCC 2014 Ground Observations Data
 
 A modified version of this dataset is included in the repository. The original can be found at the DOI: https://doi.org/10.5281/zenodo.823679
 
