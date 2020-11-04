@@ -1,4 +1,6 @@
-# Cryovex Eureka 2014
+[![DOI](https://zenodo.org/badge/250875854.svg)](https://zenodo.org/badge/latestdoi/250875854)
+
+# Cryovex Eureka Reseach Analysis Source Code
 
 Evaluating Ice Surface Elevation Estimates using Airborne Radar Altimetry from the CryoVEX-Eureka 2014 Arctic Campaign
 
